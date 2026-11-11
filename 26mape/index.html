@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mana kartupelu spēle</title>
+<style>
+/* Pamata izkārtojums — šīs rindas nemaini */
+body { font-family: Arial, sans-serif; max-width: 680px; margin: 24px auto; padding: 16px; line-height: 1.6; }
+button, input { font: inherit; padding: 10px 16px; margin: 6px 0; cursor: pointer; }
+img, audio { max-width: 100%; }
+[hidden] { display: none !important; }
+
+/* NOFORMĒ ŠEIT: pielieto 2.1. un 2.2. nodarbībā apgūto CSS */
+body {
+  background-color: #4b3720;
+  color: #e4b68a;
+}
+
+h1 {
+  color: #e4b68a;
+  font-size: 36px;
+  text-align: center;
+}
+
+.noteikumi {
+  background-color: #74532f;
+  color: #e4b68a;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.laukums {
+  width: 360px;
+  padding: 20px;
+  border: 2px solid #382922;
+  border-radius: 12px;
+  background-color: #74532f;
+  box-sizing: border-box;
+  margin: 20px auto;
+  max-width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #ad6020;
+  color: #e0a684;
+  border: 0;
+  border-radius: 8px;
+}
+</style>
+</head>
+<body>
+<h1>Mana kartupelu spēle</h1>
+<p>Mērķis ir savākt kartupeļus un iegūt pēc iespējas vairāk punktu.</p>
+<section class="noteikumi">
+  <h2>Noteikumi</h2>
+  <p>kad dzirdi skaņu, esi pabeidzis līmeni.</p>
+  <p>jo vairāk reizes nospiedīsi pogu, jo vairāk punktu iegūsi.
+  </p>
+</section>
+<div class="laukums">
+  <h2>Spēles laukums</h2>
+  <img src="atteli/varonis1 copy.png" alt="Superkartupelis ar seju attels" width="128">
+  <p>Šo skaņu dzirdesi kad speli pabeigsi veiksmigi:</p>
+  <audio controls src="skanas/klikskis.wav"></audio>
+  <p id="punkti">Punkti: 0</p>
+  <button onclick="savakt()">Iegūt kartupeligu punktu</button>
+</div>
+<script>
+// Gatava punktu poga — šo skriptu nemaini.
+let punkti = 0;
+function savakt() {
+  punkti = punkti + 1;
+  document.getElementById("punkti").textContent = "Punkti: " + punkti;
+}
+</script>
+</body>
+</html>
